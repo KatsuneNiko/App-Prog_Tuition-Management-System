@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>	
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+	
+<GridPane fx:controller="controller.LoginController" xmlns:fx="http://javafx.com/fxml/1" 
+          alignment="CENTER" hgap="5" vgap="10" styleClass="background" prefHeight="200.0" prefWidth="400.0">	
+    <Label styleClass="label-h2" text="Login" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label styleClass="label-opac" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="emailTf" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label styleClass="label-opac" text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <PasswordField fx:id="passwordPf" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    
+    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2">
+        <Label styleClass="label-error" fx:id="invalidLbl"/>
+    </HBox>
+    
+    <HBox alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="4" spacing="10">
+        <Button text="OK" onAction="#handleOK"/>
+        <Button text="Cancel" onAction="#handleCancel"/>
+    </HBox>
+    
+    <stylesheets>
+        <URL value="@tmsfx.css"/>
+    </stylesheets>
+</GridPane>

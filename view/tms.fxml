@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>	
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<VBox fx:controller="controller.TMSController" alignment="center" prefHeight="610.0" prefWidth="600.0" styleClass="background" spacing="10"
+      xmlns:fx="http://javafx.com/fxml/1" >
+    
+    <TableView fx:id="reportsTv">
+        <placeholder>
+            <Label text="Report is not loaded"/>
+        </placeholder>
+        
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+        
+        <columns>
+            <TableColumn text="Name">
+                <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tuitionClm" text="Tuition"/>
+            <TableColumn fx:id="scholarshipClm" text="Scholarship"/>
+            <TableColumn fx:id="deductionClm" text="Deduction"/>
+            <TableColumn fx:id="netFeeClm" text="NetFee"/>
+        </columns>
+    </TableView>
+    
+    <Separator/>
+    
+    <GridPane styleClass="header" alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" percentWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" percentWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="30.0" prefWidth="30.0" />
+        </columnConstraints>
+        
+        <Label text="Total Tuition:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Text fx:id="totalTuitionTxt" styleClass="text-out" text="" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Total NetFee:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Text fx:id="totalNetFeeTxt" styleClass="text-out" text="" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Total BAS:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Text fx:id="totalBASTxt" styleClass="text-out" text="" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Total Scholarship:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <Text fx:id="totalScholarshipTxt" styleClass="text-out" text="" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+        <Label text="Total Deduction:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <Text fx:id="totalDeductionTxt" styleClass="text-out" text="" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+    </GridPane>
+    
+    <Separator/>
+    
+    <HBox alignment="CENTER">
+        <Button text="Close" onAction="#handleClose"/>
+    </HBox>
+    
+    <stylesheets>
+		<URL value="@tmsfx.css"/>
+    </stylesheets>
+</VBox>
